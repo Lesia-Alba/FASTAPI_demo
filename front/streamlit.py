@@ -31,7 +31,7 @@ if task == "Text classification":
                     result = response.json()
                     st.success("Prediction completed")
                     st.write("Label:", result["label"])
-                    st.write("Confidence:", result["score"])
+                    st.write("Confidence:", result.get("prob"))
                 else:
                     st.error(f"Error: {response.status_code}")
                     st.json(response.json())
