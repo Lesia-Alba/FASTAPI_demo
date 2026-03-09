@@ -53,7 +53,7 @@ else:
                 }
 
                 response = requests.post(
-                    f"{API_URL}/predict/clf_image",
+                    f"{API_URL}/clf_image",
                     files=files,
                     timeout=120
                 )
