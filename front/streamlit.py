@@ -22,7 +22,7 @@ if task == "Text classification":
         else:
             try:
                 response = requests.post(
-                    f"{API_URL}/predict/text",
+                    f"{API_URL}/clf_text",
                     json={"text": text},
                     timeout=60
                 )
