@@ -2,7 +2,10 @@ import requests
 import streamlit as st
 from PIL import Image
 
-API_URL = "http://127.0.0.1:8000"
+API_URL = st.secrets.get(
+    "API_URL",
+    "https://5gidbl8icyoejn-8000.proxy.runpod.net"
+)
 
 st.set_page_config(page_title="BERT + YOLO11 Demo", layout="centered")
 st.title("BERT + YOLO11 Demo")
@@ -50,7 +53,7 @@ else:
                 }
 
                 response = requests.post(
-                    f"{API_URL}/predict/image",
+                    f"{API_URL}/predict/clf_image",
                     files=files,
                     timeout=120
                 )
